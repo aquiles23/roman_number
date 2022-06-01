@@ -1,3 +1,4 @@
+Este exercicio foi feito usando [fastAPI](https://fastapi.tiangolo.com), o código da solução está em [app/main.py](./app/main.py) e seus testes estão em [app/test_main.py](./app/test_main.py) usando testes paremetrizados com [pytest](https://docs.pytest.org/en/7.1.x/)
 # Dependencias
 
 - [docker](https://docs.docker.com/engine/install/)
@@ -17,7 +18,10 @@ A seguir, você pode executar o projeto executando:
 docker-compose up
 ```
 
-depois disso, a API estará rodando em localhost:8000/search
+depois disso, a API estará rodando em localhost:8000/search um endpoint do tipo POST
+
+você pode conhecer melhor os endpoints em
+http://localhost:8000/docs
 
 # Limitações
 
