@@ -14,6 +14,6 @@ client = TestClient(app)
     ],
 )
 def test_read_main(test_input, expected):
-    response = client.get("/search", json=test_input)
+    response = client.post("/search", json=test_input)
     assert response.status_code == 200
     assert response.json() == expected
