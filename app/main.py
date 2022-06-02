@@ -36,6 +36,11 @@ def romanToInteger(romanNumber: str) -> int:
 
 @app.post("/search")
 def max_roman_number(input: Payload) -> Union[str, dict]:
+    """
+    Give you the max roman Number:
+
+    - **text**: one or more roman numbers divided by letter index. Example: "AXXBXXX"
+    """
     if input.text[0] in romanNumbersDict:
         raise HTTPException(
             status_code=400,
