@@ -35,20 +35,20 @@ def romanToInteger(romanNumber: str) -> int:
 
 
 @app.post("/search")
-def max_roman_number(input: Payload) -> Union[str, dict]:
+def max_roman_number(payload: Payload) -> Union[str, dict]:
     """
     Give you the max roman Number:
 
     - **text**: one or more roman numbers divided by letter index. Example: "AXXBXXX"
     """
-    if input.text[0] in romanNumbersDict:
+    if payload.text[0] in romanNumbersDict:
         raise HTTPException(
             status_code=400,
             detail="the payload don't start with a index like 'A', 'B', 'E' etc. it start with a roman number",
         )
 
     # separate roman numbers in a python list
-    romanList = re.findall(r"[MDCLXVI]+", input.text)
+    romanList = re.findall(r"[MDCLXVI]+", payload.text)
 
     numbersList = [romanToInteger(romanNumber) for romanNumber in romanList]
 
